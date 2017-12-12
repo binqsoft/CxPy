@@ -8,7 +8,7 @@ virtualenv CxPy
 # activate
 source CxPy/bin/activate
 # clone the repository from github
-git clone
+git clone  https://github.com/binqsoft/CxPy.git
 # change working directory to CxPy directory
 cd CxPy
 # install module dependencies
