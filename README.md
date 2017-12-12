@@ -13,6 +13,8 @@ git clone  https://github.com/binqsoft/CxPy.git
 cd CxPy
 # install module dependencies
 pip install -r requirement.txt
+# set proper configuration in etc/config.json 
+
 # run API to scan source code and generate PDF and XML reports
 python APICx.py
 # check reports from the CxPy/reports folder
