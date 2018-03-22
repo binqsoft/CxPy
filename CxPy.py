@@ -431,6 +431,18 @@ class CxPy(object):
             raise Exception("get_associated_groups, Unable to GetAssociatedGroupsList: {} ".format(e.message))
 
     #
+    # get first associated group id
+    #
+    def get_first_associated_group_id(self):
+        first_associated_group_id = '0'
+        group_list = self.get_associated_groups()
+        groups = group_list.get("GroupList").get("Group")
+        first_associated_group = next(iter(groups), None)
+        if first_associated_group:
+            first_associated_group_id = first_associated_group.get("ID")
+        return str(first_associated_group_id)
+
+    #
     # Filter For get_project_scanned_display_data
     #
     def filter_project_scanned_display_data(self, project_id):
@@ -1310,6 +1322,8 @@ class CxPy(object):
         project_settings = self.client.factory.create('ProjectSettings')
         scan_args.PrjSettings = project_settings
         scan_args.PrjSettings.projectID = 0
+        # CxSAST 8.6.0 requires PrjSettings.TaskId, just set it to 0
+        scan_args.PrjSettings.TaskId = 0
         # Set project name from parameter
         if project_name:
             scan_args.PrjSettings.ProjectName = project_name
@@ -1322,7 +1336,7 @@ class CxPy(object):
             scan_args.PrjSettings.PresetID = preset_id or 36
         else:
             raise Exception('Preset name is missing!')
-        scan_args.PrjSettings.AssociatedGroupID = '03265ae9-4f4d-452d-bb00-99d2b456ba90'
+        scan_args.PrjSettings.AssociatedGroupID = self.get_first_associated_group_id()
         # Set the source files encoding, English = 1
         if scan_configuration_id in [1, 100002, 100003]:
             scan_args.PrjSettings.ScanConfigurationID = scan_configuration_id

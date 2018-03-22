@@ -69,7 +69,7 @@ if __name__ == '__main__':
                                   file_name=dir_path + "/BookStoreJava_21403_lines.zip",
                                   is_public=True,
                                   is_private_scan=False,
-                                  is_incremental=True,
+                                  is_incremental=False,
                                   comment='Empty comment.',
                                   ignore_scan_with_unchanged_code=True,
                                   exclude_files=None,
