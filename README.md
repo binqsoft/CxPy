@@ -17,14 +17,14 @@ Python package requirements:
 |   `-- config.json_template           configuration template
 |-- reports                            This is the directory where the generated reports will be.
 |   `-- reports.txt
-|-- APICx.py                           An example to call the SDK "CxPy.py"
 |-- BookStoreJava_21403_lines.zip      sample source code provied by Checkmarx
 |-- CxPy.py                            The python SOAP API SDK file
 |-- CxSDKWebService.xml                The CxSAST SOAP API WSDL file      
 |-- LICENSE                            license
 |-- README.md                          readme
 |-- checkmarx_soap_api.log             output log
-`-- requirements.txt                   the file that describes which python packages you need to install
+|-- requirements.txt                   the file that describes which python packages you need to install
+`-- test_Checkmarx_SOAP_API.py         An demo script to call the SDK "CxPy.py"
 ```
 
 
@@ -43,8 +43,8 @@ Python package requirements:
      * pip install -r requirement.txt
  7. set proper configuration in etc/config.json 
      * Please modify etc/config.json to set your Checkmarx server ip, username, password
- 8. run the demo script 'APICx.py' to scan source code 'BookStoreJava_21403_lines.zip' and generate PDF and XML reports
-     * python APICx.py
+ 8. run the demo script 'test_Checkmarx_SOAP_API.py' to scan source code 'BookStoreJava_21403_lines.zip' and generate PDF and XML reports
+     * python test_Checkmarx_SOAP_API.py
  9. check reports from the CxPy/reports folder, BookStoreJava.pdf, BookStoreJava.xml will be generated.
      
 
