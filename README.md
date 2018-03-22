@@ -43,7 +43,7 @@ Python package requirements:
      * pip install -r requirement.txt
  7. set proper configuration in etc/config.json 
      * Please modify etc/config.json to set your Checkmarx server ip, username, password
- 8. run the domo script 'APICx.py' to scan source code 'BookStoreJava_21403_lines.zip' and generate PDF and XML reports
+ 8. run the demo script 'APICx.py' to scan source code 'BookStoreJava_21403_lines.zip' and generate PDF and XML reports
      * python APICx.py
  9. check reports from the CxPy/reports folder, BookStoreJava.pdf, BookStoreJava.xml will be generated.
      
