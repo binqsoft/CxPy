@@ -1,9 +1,11 @@
 {
 	"checkmarx":{
-		"url":"http://172.16.29.125/Cxwebinterface/CxWsResolver.asmx?WSDL",
+		"url":"http://172.16.29.112/Cxwebinterface/CxWsResolver.asmx?WSDL",
 		"APIType":1,
 		"username":"admin",
 		"password":"admin",
-		"APIversion":"0.0"
+		"APIversion":"0.0",
+		"IsUserAdmin": "True",
+		"team": "CxServer\\SP\\Company\\Users"
 	}
 }
