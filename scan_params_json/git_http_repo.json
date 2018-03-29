@@ -1,0 +1,20 @@
+{
+  "project_name":"BookStoreJava",
+  "preset_name":"All",
+  "source_location_type":"SourceControl",
+  "is_public":"True",
+  "is_private_scan":"False",
+  "is_incremental":"False",
+  "comment":"Empty comment.",
+  "ignore_scan_with_unchanged_code":"False",
+  "exclude_files_patterns":"None",
+  "exclude_folders_patterns":"None",
+  "use_ssl":"False",
+  "use_ssh":"False",
+  "server_name":"http://yhl:Password01!@www.zuluoji.cn/gitlab/yhl/CxPy.git",
+  "source_control_protocol_type":"PasswordServer",
+  "repository_name":"http://yhl:Password01!@www.zuluoji.cn/gitlab/yhl/CxPy.git",
+  "protocol_parameters":"happy/checkmarx-java.git",
+  "git_branch":"refs/heads/master",
+  "git_ls_view_type":"TAGS_AND_HEADS"
+}

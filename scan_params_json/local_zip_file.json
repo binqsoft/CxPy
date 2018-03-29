@@ -1,0 +1,13 @@
+{
+  "project_name":"BookStoreJava",
+  "preset_name":"All",
+  "source_location_type":"Local",
+  "file_path":"/Users/openerp/dev/Checkmarx/CxPy/BookStoreJava_21403_lines.zip",
+  "is_public":"True",
+  "is_private_scan":"False",
+  "is_incremental":"False",
+  "comment":"Empty comment.",
+  "ignore_scan_with_unchanged_code":"True",
+  "exclude_files_patterns":"None",
+  "exclude_folders_patterns":"None"
+}
