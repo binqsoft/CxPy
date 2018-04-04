@@ -269,7 +269,7 @@ class Common(object):
         user_id = None
 
         users = self.client.service.GetAllUsers(self.session_id)
-        for user in users:
+        for user in users.UserDataList.UserData:
             if user.UserName == user_name:
                 user_id = user.ID
                 break
