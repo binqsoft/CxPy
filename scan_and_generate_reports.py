@@ -19,11 +19,11 @@ logger = logging.getLogger(__name__)
 if __name__ == '__main__':
     print ("[SYS]\tLoading...")
     pyC = CxPy.CxPy()
-    scan_params_json_file = "local_zip_file.json"
+    # scan_params_json_file = "local_zip_file.json"
     # scan_params_json_file = "svn.json"
     # scan_params_json_file = "windows_shared_folder.json"
     # scan_params_json_file = "git_http_repo.json"
-    # scan_params_json_file = "git_ssh_repo.json"
+    scan_params_json_file = "git_ssh_repo.json"
 
     try:
         with open(dir_path + "/scan_params_json/" + scan_params_json_file, "r") as f:
@@ -59,7 +59,6 @@ if __name__ == '__main__':
         d["ssh_private_key"] = ssh_private_key
 
     project_id, run_id = pyC.scan(**d)
-
     # check scanning status
     scan_id = pyC.check_scanning_status(run_id)
 
@@ -70,4 +69,3 @@ if __name__ == '__main__':
 
     pyC.delete_projects(["BookStoreJava"])
     print ("[SYS]\tFinished...")
-    pass
