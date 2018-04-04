@@ -1273,7 +1273,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="NumOfScansToPreserve" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:long" />
           <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:long" />
-          <s:element minOccurs="1" maxOccurs="1" name="DurationLimitInHours" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="DurationLimitInHours" nillable="true" type="s:loGetScanReportStatusng" />
         </s:sequence>
       </s:complexType>
       <s:simpleType name="CxDataRetentionType">
