@@ -222,7 +222,7 @@ class MyTest(unittest.TestCase):
             self.assertTrue("ok")
 
     def test_get_scan_summary(self):
-        project_id, run_id = self.create_scan()x
+        project_id, run_id = self.create_scan()
         scan_id = pyC.check_scanning_status(run_id=run_id)
         result = pyC.get_scan_summary(scan_id=scan_id)
         self.assertNotEqual(result, None)
@@ -239,9 +239,6 @@ class MyTest(unittest.TestCase):
                 break
         self.assertEqual(scan_id > 0, True)
         self.assertEqual(current_status, "Finished")
-
-    def test_get_team_ldap_groups_mapping(self):
-        pyC.get_team_ldap_groups_mapping(team_id=)
 
     def test_is_valid_project_name(self):
         first = pyC.is_valid_project_name("BookStoreJava")
