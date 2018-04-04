@@ -42,6 +42,8 @@ Python package requirements:
 |   |-- local_zip_file.json                     get source code from local zip file
 |   |-- svn.json                                get source code from svn
 |   `-- windows_shared_folder.json              get source code from windows shared folder
+|-- test
+|   `-- unitTest.py                             The API unittest file
 |-- BookStoreJava_21403_lines.zip
 |-- CxPy.py                                     The python SOAP API SDK file
 |-- CxSDKWebService.xml                         The CxSAST SOAP API WSDL file
@@ -77,37 +79,35 @@ Python package requirements:
  10. check reports from the CxPy/reports folder, BookStoreJava.pdf, BookStoreJava.csv, BookStoreJava.xml will be generated.
  
  
- ## The API list provided in CxPy
- 1.  branch_project_by_id
- 2.  cancel_scan
- 3.  create_scan_report
- 4.  delete_projects
- 5.  delete_scans
- 6.  delete_user
- 7.  execute_data_retention
- 8.  get_all_users
- 9.  get_associated_groups_list
- 10. get_configuration_set_list
- 11. get_preset_list
- 12. get_project_configuration
- 13. get_project_scanned_display_data
- 14. get_projects_display_data
- 15. get_scan_report
- 16. get_scan_report_status
- 17. get_scan_summary
- 18. get_scans_display_data_for_all_projects
- 19. get_status_of_single_scan
- 20. get_team_ldap_groups_mapping
- 21. is_valid_project_name
- 22. logout
- 23. scan
- 24. set_team_ldap_groups_mapping
- 25. stop_data_retention
- 26. update_project_configuration
- 27. update_project_incremental_configuration
- 28. update_scan_comment
- 29. filter_project_scanned_display_data
- 30. filter_projects_display_data
- 31. filter_scan_info_for_all_projects
- 32. check_scanning_status
- 33. generate_report
+ ## The API list provided in CxPy                    unittest
+ 1.  branch_project_by_id                               ok
+ 2.  cancel_scan                                        ok
+ 3.  create_scan_report                                 ok
+ 4.  delete_projects                                    ok
+ 5.  delete_scans                                       ok
+ 6.  execute_data_retention                             ok
+ 7.  get_all_users                                      ok
+ 8.  get_associated_groups_list                         ok
+ 9. get_configuration_set_list                          ok
+ 10. get_preset_list                                    ok
+ 11. get_project_configuration                          ok
+ 12. get_project_scanned_display_data                   ok
+ 13. get_projects_display_data                          ok
+ 14. get_scan_report                                    ok
+ 15. get_scan_report_status                             ok
+ 16. get_scan_summary                                   ok
+ 17. get_scans_display_data_for_all_projects            ok
+ 18. get_status_of_single_scan                          ok
+ 19. get_team_ldap_groups_mapping                       X       You need to configure your own ldap service
+ 20. logout                                             ok
+ 21. scan                                               ok
+ 22. set_team_ldap_groups_mapping                       X       You need to configure your own ldap service
+ 23. stop_data_retention                                ok
+ 24. update_project_configuration                       ok
+ 25. update_project_incremental_configuration           ok
+ 26. update_scan_comment                                ok
+ 27. filter_project_scanned_display_data                ok
+ 28. filter_projects_display_data                       ok
+ 29. filter_scan_info_for_all_projects                  ok
+ 30. check_scanning_status                              ok
+ 31. generate_report                                    ok
