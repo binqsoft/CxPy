@@ -144,50 +144,50 @@ class CxPy(Common):
         except Exception as e:
             raise Exception("Unable to CreateScanReport: {} ".format(e.message))
 
-    def delete_projects(self, project_names):
-        """
-
-        delete projects by project names
-
-        :param project_names:
-        :type project_names: list
-        :return: dictionary
-        """
-        project_ids_number = []
-        project_names_exist = []
-        project_names_not_exist = []
-
-        for projectName in project_names:
-            project_id = self.get_project_id_by_name(projectName)
-            if project_id:
-                project_names_exist.append(projectName)
-                project_ids_number.append(project_id)
-            else:
-                project_names_not_exist.append(projectName)
-
-        logger.warning(" deleting_projects >>> project names {} : "
-                       "project ids {} ".format(', '.join(project_names), project_ids_number))
-        project_ids = self.client.factory.create('ArrayOfLong')
-        project_ids.long.extend(project_ids_number)
-
-        try:
-            tmp = self.client.service.DeleteProjects(self.session_id, project_ids)
-
-            if not tmp.IsSuccesfull:
-                logger.error(' Fail to delete projects: '
-                             '{} '.format(tmp.ErrorMessage))
-                raise Exception(' Fail to delete projects: '
-                                '{} '.format(tmp.ErrorMessage))
-
-            return {"success": True,
-                    "deleted_projects": project_names_exist,
-                    "projects_not_exit": project_names_not_exist}
-
-        except Exception as e:
-            logger.error("Unable to DeleteProjects: "
-                         "{} ".format(e.message))
-            raise Exception("Unable to DeleteProjects: "
-                            "{} ".format(e.message))
+    # def delete_projects(self, project_names):
+    #     """
+    #
+    #     delete projects by project names
+    #
+    #     :param project_names:
+    #     :type project_names: list
+    #     :return: dictionary
+    #     """
+    #     project_ids_number = []
+    #     project_names_exist = []
+    #     project_names_not_exist = []
+    #
+    #     for projectName in project_names:
+    #         project_id = self.get_project_id_by_name(projectName)
+    #         if project_id:
+    #             project_names_exist.append(projectName)
+    #             project_ids_number.append(project_id)
+    #         else:
+    #             project_names_not_exist.append(projectName)
+    #
+    #     logger.warning(" deleting_projects >>> project names {} : "
+    #                    "project ids {} ".format(', '.join(project_names), project_ids_number))
+    #     project_ids = self.client.factory.create('ArrayOfLong')
+    #     project_ids.long.extend(project_ids_number)
+    #
+    #     try:
+    #         tmp = self.client.service.DeleteProjects(self.session_id, project_ids)
+    #
+    #         if not tmp.IsSuccesfull:
+    #             logger.error(' Fail to delete projects: '
+    #                          '{} '.format(tmp.ErrorMessage))
+    #             raise Exception(' Fail to delete projects: '
+    #                             '{} '.format(tmp.ErrorMessage))
+    #
+    #         return {"success": True,
+    #                 "deleted_projects": project_names_exist,
+    #                 "projects_not_exit": project_names_not_exist}
+    #
+    #     except Exception as e:
+    #         logger.error("Unable to DeleteProjects: "
+    #                      "{} ".format(e.message))
+    #         raise Exception("Unable to DeleteProjects: "
+    #                         "{} ".format(e.message))
 
     def delete_scans(self, scan_ids_number):
         """
@@ -220,32 +220,32 @@ class CxPy(Common):
             logger.error("Unable to DeleteScans: {} ".format(e.message))
             raise Exception("Unable to DeleteScans: {} ".format(e.message))
 
-    def delete_user(self, user_name):
-        """
-
-        delete user from Checkmarx server.
-
-        :param user_name:
-        :type user_name: string
-        :return:
-        :rtype: dictionary
-        """
-        user_id = self.get_user_id_by_name(user_name)
-
-        try:
-            logger.warning("deleting user {}".format(user_name))
-            tmp = self.client.service.DeleteUser(self.session_id, user_id)
-
-            if not tmp.IsSuccesfull:
-                logger.error(' Fail to DeleteUser {} '.format(tmp.ErrorMessage))
-                raise Exception(' Fail to DeleteUser {} '.format(tmp.ErrorMessage))
-
-            return {"success": True,
-                    "deleted_user": user_name}
-
-        except Exception as e:
-            logger.error("Unable to DeleteUser: {} ".format(e.message))
-            raise Exception("Unable to DeleteUser: {} ".format(e.message))
+    # def delete_user(self, user_name):
+    #     """
+    #
+    #     delete user from Checkmarx server.
+    #
+    #     :param user_name:
+    #     :type user_name: string
+    #     :return:
+    #     :rtype: dictionary
+    #     """
+    #     user_id = self.get_user_id_by_name(user_name)
+    #
+    #     try:
+    #         logger.warning("deleting user {}".format(user_name))
+    #         tmp = self.client.service.DeleteUser(self.session_id, user_id)
+    #
+    #         if not tmp.IsSuccesfull:
+    #             logger.error(' Fail to DeleteUser {} '.format(tmp.ErrorMessage))
+    #             raise Exception(' Fail to DeleteUser {} '.format(tmp.ErrorMessage))
+    #
+    #         return {"success": True,
+    #                 "deleted_user": user_name}
+    #
+    #     except Exception as e:
+    #         logger.error("Unable to DeleteUser: {} ".format(e.message))
+    #         raise Exception("Unable to DeleteUser: {} ".format(e.message))
 
     def execute_data_retention(self, data_retention_type, num_of_scans_to_preserve,
                                start_date, end_date, duration_limit_in_hours):
@@ -255,11 +255,11 @@ class CxPy(Common):
         :param num_of_scans_to_preserve:
         :type num_of_scans_to_preserve: integer
         :param start_date:
-        :type start_date: integer
+        :type start_date: long
         :param end_date:
-        :type end_date: integer
+        :type end_date: long
         :param duration_limit_in_hours:
-        :type duration_limit_in_hours: integer
+        :type duration_limit_in_hours: long
         :return:
         """
         try:
@@ -632,7 +632,7 @@ class CxPy(Common):
              path=None, include_subtree=True,
              port=3690, use_ssl=False, use_ssh=False, server_name=None, repository_type="GIT",
              srctl_username=None, srctl_password=None, source_control_protocol_type="PasswordServer",
-             repository_name=None, protocol_parameters=None, git_branch="refs/heads/master",
+             repository_name=None, protocol_parameters=None, git_branch="refs\\heads\\master",
              git_ls_view_type="TAGS_AND_HEADS",
              ssh_private_key=None, perforce_browsing_mode="None",
              file_path=None,
@@ -825,7 +825,6 @@ class CxPy(Common):
                 including wildcards to exclude. example: *.txt, *.doc
         :return:
         """
-
         scan_args = CliScanArgs(project_name=project_name,
                                 preset_name=preset_name,
                                 description=description,
@@ -862,7 +861,6 @@ class CxPy(Common):
                              "{} ".format(response.ErrorMessage))
                 raise Exception("Error establishing connection: "
                                 "{} ".format(response.ErrorMessage))
-
         except Exception as e:
             raise Exception("Unable to scan: {} ".format(e.message))
 
@@ -946,6 +944,7 @@ class CxPy(Common):
                              "{} ".format(tmp.ErrorMessage))
                 raise Exception("Fail to update_project_configuration: "
                                 "{} ".format(tmp.ErrorMessage))
+            return "ok"
         except Exception as e:
             logger.error("Unable to update_project_configuration: {} ".format(e.message))
             raise Exception("Unable to update_project_configuration: "
@@ -1003,6 +1002,8 @@ class CxPy(Common):
                 raise Exception(
                     "Fail to UpdateProjectIncrementalConfiguration: "
                     "{} ".format(tmp.ErrorMessage))
+            else:
+                return "ok"
 
         except Exception as e:
             logger.error("Unable to UpdateProjectIncrementalConfiguration: "
