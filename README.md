@@ -13,7 +13,7 @@ Python package requirements:
 
 ```
 .
-|-- CxType															Checkmarx CliScanArgs
+|-- CxType                                 Checkmarx CliScanArgs
 |   |-- __init__.py
 |   |-- array_of_scan_path.py
 |   |-- cli_scan_args.py
@@ -32,27 +32,27 @@ Python package requirements:
 |   |-- source_filter_patterns.py
 |   `-- source_location_type.py
 |-- etc
-|   |-- config.json												configuration demo, please edit this file to set your username, password, Checkmarx server ip
-|   `-- config.json_template								configuration template
-|-- reports														  This is the directory where the generated reports will be.
+|   |-- config.json                        configuration demo, please edit this file to set your username, password, Checkmarx server ip
+|   `-- config.json_template               configuration template
+|-- reports                                This is the directory where the generated reports will be.
 |   `-- reports.txt
-|-- scan_params_json										  json files for the parameters of the scan method from CxPy.py
-|   |-- git_http_repo.json									  get source code from git http repository url
-|   |-- git_ssh_repo.json									   get source code from git ssh repository url
-|   |-- local_zip_file.json									   get source code from local zip file
-|   |-- svn.json												      get source code from svn
-|   `-- windows_shared_folder.json				      get source code from windows shared folder
+|-- scan_params_json                       json files for the parameters of the scan method from CxPy.py
+|   |-- git_http_repo.json                 get source code from git http repository url
+|   |-- git_ssh_repo.json                  get source code from git ssh repository url
+|   |-- local_zip_file.json                get source code from local zip file
+|   |-- svn.json                           get source code from svn
+|   `-- windows_shared_folder.json         get source code from windows shared folder
 |-- test
-|   `-- unitTest.py												  The API unittest file
+|   `-- unitTest.py                        The API unittest file
 |-- BookStoreJava_21403_lines.zip
-|-- CxPy.py															The python SOAP API SDK file
-|-- CxSDKWebService.xml									The CxSAST SOAP API WSDL file
+|-- CxPy.py                                The python SOAP API SDK file
+|-- CxSDKWebService.xml                    The CxSAST SOAP API WSDL file
 |-- LICENSE
 |-- README.md
-|-- common.py													  common class that other class will inherit
+|-- common.py                              common class that other class will inherit
 |-- id_rsa
 |-- requirements.txt
-`-- scan_and_generate_reports.py						a demo script you can run to scan source code and generate reports
+`-- scan_and_generate_reports.py            a demo script you can run to scan source code and generate reports
 ```
 
 ## A demo process to use CxPy
@@ -111,8 +111,8 @@ Python package requirements:
 | 27. filter_scan_info_for_all_projects | ok | |
 | 28. check_scanning_status | ok | |
 | 29. generate_report | ok | |
-| 30. get_team_ldap_groups_mapping  | `X` | The same as 31 | |
-| 31. set_team_ldap_groups_mapping | `X` | You need to configure your own ldap service | |
+| 30. get_team_ldap_groups_mapping  | `X` | The same as 31 |
+| 31. set_team_ldap_groups_mapping | `X` | You need to configure your own ldap service |
 
 
 ## Upgrade Notice
