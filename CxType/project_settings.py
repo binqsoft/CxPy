@@ -10,7 +10,7 @@ class ProjectSettings(Common):
         self.projectID = 0
         self.ProjectName = project_name
         self.presetName = preset_name
-        # 8.5版本没有这个字段
+        # "TaskID" is used v8.6.0 and up
         # self.TaskId = 0
         self.ScanConfigurationID = 1
         self.Description = description
