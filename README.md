@@ -80,39 +80,39 @@ Python package requirements:
 
  ## The API list provided in CxPy
 
-| API |  UnitTest |
+| API |  UnitTest | |
 | :---------- | :----------: | :---------- |
-| 1. branch_project_by_id | ok |
-| 2. cancel_scan | ok |
-| 3.  create_scan_report | ok |
-| 4.  delete_projects | ok |
-| 5.  delete_scans | ok |
-|6.  execute_data_retention | ok |
-| 7.  get_all_users | ok |
-| 8.  get_associated_groups_list | ok |
-| 9.  get_configuration_set_list | ok |
-| 10. get_preset_list | ok |
-| 11. get_project_configuration | ok |
-| 12. get_project_scanned_display_data | ok |
-| 13. get_projects_display_data | ok |
-| 14. get_scan_report | ok |
-| 15. get_scan_report_status | ok |
-| 16. get_scan_summary | ok |
-| 17. get_scans_display_data_for_all_projects | ok |
-| 18. get_status_of_single_scan  | ok |
-| 19. logout | ok |
-| 20. scan | ok |
-| 21. stop_data_retention | ok |
-| 22. update_project_configuration | ok |
-| 23. update_project_incremental_configuration | ok |
-| 24. update_scan_comment | ok |
-| 25. filter_project_scanned_display_data | ok |
-| 26. filter_projects_display_data | ok |
-| 27. filter_scan_info_for_all_projects | ok |
-| 28. check_scanning_status | ok |
-| 29. generate_report | ok |
-| 30. get_team_ldap_groups_mapping  | `X` | The same as 31 |
-| 31. set_team_ldap_groups_mapping | `X` | You need to configure your own ldap service |
+| 1. branch_project_by_id | ok | |
+| 2. cancel_scan | ok | |
+| 3.  create_scan_report | ok | |
+| 4.  delete_projects | ok | |
+| 5.  delete_scans | ok | |
+|6.  execute_data_retention | ok | |
+| 7.  get_all_users | ok | |
+| 8.  get_associated_groups_list | ok | |
+| 9.  get_configuration_set_list | ok | |
+| 10. get_preset_list | ok | |
+| 11. get_project_configuration | ok | |
+| 12. get_project_scanned_display_data | ok | |
+| 13. get_projects_display_data | ok | |
+| 14. get_scan_report | ok | |
+| 15. get_scan_report_status | ok | |
+| 16. get_scan_summary | ok | |
+| 17. get_scans_display_data_for_all_projects | ok | |
+| 18. get_status_of_single_scan  | ok | |
+| 19. logout | ok | |
+| 20. scan | ok | |
+| 21. stop_data_retention | ok | |
+| 22. update_project_configuration | ok | |
+| 23. update_project_incremental_configuration | ok | |
+| 24. update_scan_comment | ok | |
+| 25. filter_project_scanned_display_data | ok | |
+| 26. filter_projects_display_data | ok | |
+| 27. filter_scan_info_for_all_projects | ok | |
+| 28. check_scanning_status | ok | |
+| 29. generate_report | ok | |
+| 30. get_team_ldap_groups_mapping  | `X` | The same as 31 | |
+| 31. set_team_ldap_groups_mapping | `X` | You need to configure your own ldap service | |
 
 
 ## Upgrade Notice
