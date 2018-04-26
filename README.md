@@ -2,14 +2,13 @@
 This is a Checkmarx SOAP API SDK implemented by Python 2.7.
 
 ## Getting Started
-If you want to know more about Checkmarx SOAP API, please check Checkmarx Knowledge Center: https://checkmarx.atlassian.net/wiki/spaces/KC/pages/33980521/SOAP+API 
-
+If you want to know more about Checkmarx SOAP API, please check Checkmarx Knowledge Center: https://checkmarx.atlassian.net/wiki/spaces/KC/pages/33980521/SOAP+API
+---
 ### Prerequisites
 Python package requirements:
     suds==0.4
-    
-### file structure of this project
 
+### file structure of this project
 
 ```
 .
@@ -54,7 +53,7 @@ Python package requirements:
 |-- requirements.txt
 `-- scan_and_generate_reports.py            a demo script you can run to scan source code and generate reports
 ```
-
+---
 ## A demo process to use CxPy
  1. We suggest using virtualenv to setup an independent running environment for your project
      * pip install virtualenv
@@ -78,6 +77,28 @@ Python package requirements:
      * python scan_and_generate_reports.py
  10. check reports from the CxPy/reports folder, BookStoreJava.pdf, BookStoreJava.csv, BookStoreJava.xml will be generated.
 
+
+---
+| Flow Chart |
+|--|
+| ![avatar](https://raw.githubusercontent.com/binqsoft/CxPy/master/test/flow_chart.png)|
+
+---
+ ## User Guide
+ The general steps to scan and generate reports are as follows.
+
+ ### Step 1: Create new scan
+ #### Method ----- scan
+ * This method can call an immediate scan. Depending on whether the submitted project name already exists the scan is called for the existing CxSAST project, or a new project is created.
+
+ ### Step 2: Check scan status
+ #### Method ----- check_scanning_status
+ * This method can get the scan status and its details.
+
+ ### Step 3: Generate report
+ #### Method ----- generate_report
+ * This method can generate reports.
+---
  ## The API list provided in CxPy
 
 | API |  UnitTest | |
@@ -114,6 +135,6 @@ Python package requirements:
 | 30. get_team_ldap_groups_mapping  | `X` | The same as 31 |
 | 31. set_team_ldap_groups_mapping | `X` | You need to configure your own ldap service |
 
-
+---
 ## Upgrade Notice
 * If you use Checkmarx v8.6.0 and up, you should use the "TaskID" field in "CxType/project_settings.py"
