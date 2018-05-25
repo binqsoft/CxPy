@@ -137,5 +137,7 @@ Python package requirements:
 
 ---
 ## Upgrade Notice
-* If you use Checkmarx v8.6.0 and up, you should use the "TaskID" field in "CxType/project_settings.py"
-* If you use Checkmarx v8.7.0 and up, you should use the "SourceControlCommandId" field in "CxType/source_code_settings.py"
+####  * For Checkmarx v8.7.0
+* Add the "SourceControlCommandId" field in "CxType/source_code_settings.py"
+#### * For Checkmarx v8.6.0
+* Add the "TaskID" field in "CxType/project_settings.py"
