@@ -26,9 +26,9 @@ class MyTest(unittest.TestCase):
         time_data = date_1 - date_2
         return (time_data.days * 24 * 3600 + time_data.seconds) * 10000000
 
-    def create_scan(self, json_path="local_zip_file.json"):
+    def create_scan(self, json_path="D:\MyCode\CxPy\scan_params_json\git_ssh_repo.json"):
         try:
-            with open(dir_path + "/scan_params_json/" + json_path, "r") as f:
+            with open(json_path, "r") as f:
                 data = json.loads(f.read())
         except Exception as e:
             raise Exception("unable to open file. ")
@@ -53,7 +53,7 @@ class MyTest(unittest.TestCase):
 
     def start_scan(self, json_path):
         try:
-            with open(dir_path + "/scan_params_json/" + json_path, "r") as f:
+            with open(json_path, "r") as f:
                 data = json.loads(f.read())
         except Exception as e:
             raise Exception("unable to open file. ")
@@ -96,11 +96,11 @@ class MyTest(unittest.TestCase):
         pyC.generate_report(project_name, scan_id, report_type="CSV")
         pyC.generate_report(project_name, scan_id, report_type="XML")
 
-        # delete the project
-        pyC.delete_projects(["BookStoreJava"])
+        # # delete the project
+        # pyC.delete_projects(["BookStoreJava"])
         return project_id, run_id
 
-    def test_local_zip_file(self, zip_json_file="local_zip_file.json"):
+    def test_local_zip_file(self, zip_json_file="D:\MyCode\CxPy\scan_params_json\local_zip_file.json"):
         project_id, run_id = self.start_scan(zip_json_file)
         self.assertEqual((project_id > 0, run_id > 0), (True, True))
 
@@ -108,15 +108,15 @@ class MyTest(unittest.TestCase):
         project_id, run_id = self.start_scan(svn_json_file)
         self.assertEqual((project_id > 0, run_id > 0), (True, True))
 
-    def test_windows_shared_folder(self, win_shared_folder_json_file="windows_shared_folder.json"):
+    def test_windows_shared_folder(self, win_shared_folder_json_file="scan_params_json/windows_shared_folder.json"):
         project_id, run_id = self.start_scan(win_shared_folder_json_file)
         self.assertEqual((project_id > 0, run_id > 0), (True, True))
 
-    def test_git_http_repo(self, git_http_json_file="git_http_repo.json"):
+    def test_git_http_repo(self, git_http_json_file="scan_params_json/git_http_repo.json"):
         project_id, run_id = self.start_scan(git_http_json_file)
         self.assertEqual((project_id > 0, run_id > 0), (True, True))
 
-    def test_ssh_repo(self, git_ssh_json_file="git_ssh_repo.json"):
+    def test_ssh_repo(self, git_ssh_json_file="scan_params_json/git_ssh_repo.json"):
         project_id, run_id = self.start_scan(git_ssh_json_file)
         self.assertEqual((project_id > 0, run_id > 0), (True, True))
 
@@ -125,7 +125,7 @@ class MyTest(unittest.TestCase):
         self.assertEqual(project_id > 0, True)
 
     def test_cancel_scan(self):
-        project_id, run_id = self.test_create_scan()
+        project_id, run_id = self.create_scan()
         result = pyC.cancel_scan(run_id)
         self.assertEqual(result.get("success"), True)
 
@@ -144,16 +144,6 @@ class MyTest(unittest.TestCase):
         result = pyC.create_scan_report(scan_id, report_type="XML")
         print("xml_id:", result)
         self.assertEqual(result > 0, True)
-
-    def test_delete_projects(self):
-        delete_state = pyC.delete_projects(["BookStoreJava"])
-        self.assertEqual(delete_state.get("success"), True)
-        delete_state2 = pyC.delete_projects(["TestCxPy", "TestPy"])
-        self.assertEqual(delete_state2.get("success"), True)
-
-    def test_delete_user(self):
-        result = pyC.delete_user(user_name="chen072262@gmail.com")
-        self.assertEqual(result.get("success"), True)
 
     def test_delete_scan(self):
         project_id, run_id = self.create_scan()

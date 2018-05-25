@@ -43,6 +43,8 @@ class SourceCodeSettings(Common):
         self.file_path = file_path
         self.exclude_files_patterns = exclude_files_patterns
         self.exclude_folders_patterns = exclude_folders_patterns
+        # "SourceControlCommandId" is used v8.7.0 and up
+        self.SourceControlCommandId = 0L
 
     def get_source_code_settings(self):
         source_code_settings = self.client.factory.create('SourceCodeSettings')
@@ -63,6 +65,8 @@ class SourceCodeSettings(Common):
                                           self.repository_name, self.protocol_parameters, self.git_branch,
                                           self.git_ls_view_type, self.ssh_public_key,
                                           self.ssh_private_key, self.perforce_browsing_mode).get_source_control_settings()
+        # "SourceControlCommandId" is used v8.7.0 and up
+        source_code_settings.SourceControlCommandId = self.SourceControlCommandId
         source_code_settings.SourceFilterLists = \
             SourceFilterPatterns(self.exclude_files_patterns,
                                  self.exclude_folders_patterns).get_source_filter_patterns()
